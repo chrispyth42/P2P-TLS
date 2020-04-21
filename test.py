@@ -28,10 +28,10 @@ print("Connection Success!")
 print(f'Running on port {params["port"]}\n')
 
 print(f'Serving on {c["localS"].getsockname()[0]} to {c["localS"].getpeername()[0]} with {c["localS"].version()}')
-print(f'\tServer symmetric key: {c["localK"].generate_key()}')
+print(f'\tServer symmetric key: {c["localK"]._encryption_key}')
 
 print(f'Connected to {c["remoteS"].getpeername()[0]} with {c["remoteS"].version()}')
-print(f'\tRemote symmetric key: {c["remoteK"].generate_key()}\n')
+print(f'\tRemote symmetric key: {c["remoteK"]._encryption_key}\n')
 
 
 #Sending an encrypted message to the other host
