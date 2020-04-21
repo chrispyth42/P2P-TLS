@@ -6,12 +6,14 @@ Contains an importable function which handles certificate creation, password aut
 
 References used, and a description of the project can be found at the top of the script. Furthermore, a chart illustrating the process of what it's doing can be found in 'flow.png'
 
-This function requires that the 'cryptography' module be installed, running in python 3.6 or later
+This function requires that the 'cryptography' module be installed, running in python 3.6 or later. If any flaws are found in its design, feel free to let me know! I'd be more than happy to improve it
 
 ## test.py
 
-Contains the most basic implementation of doubleTLS.py. It describes the inputs and outputs of the function, and how to use the sockets/keys it returns to communicate with the other host
+Contains the most basic implementation of doubleTLS.py. It describes the inputs and outputs of the function, and how to use the sockets/keys it returns to communicate between two hosts
 
 ## chat.py
 
-Contains a basic chatroom application built atop doubleTLS.py! Allowing a conversation to take place over the connection that it generates
+Contains a basic chatroom application built atop doubleTLS.py! Allowing a conversation to take place over the generated connection
+
+
