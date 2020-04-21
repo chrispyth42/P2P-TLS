@@ -219,7 +219,7 @@ def connect(args=dict()):
             serverSocket.bind(('0.0.0.0',Port))
         except OSError:
             print("S: Likely port already in use (Linux has a brief timeout between runs)")
-            exit()
+            return
         serverSocket.settimeout(None)
 
         #The socket accept operation has doesn't seem to have a means of exiting once it's started. So I worked around this by
@@ -255,7 +255,11 @@ def connect(args=dict()):
 
         #Start listening for connection
         serverSocket.listen(1)
-        remoteSocket, address = serverSocket.accept()
+        try:
+            remoteSocket, address = serverSocket.accept()
+        except ConnectionAbortedError:
+            print("S: Connection Cancelled, or timed out")
+            return 
         
         #If the remote connection was localhost (operation cancelled), exit the script
         if address[0] == '127.0.0.1':
