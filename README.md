@@ -6,6 +6,8 @@ Contains an importable function which handles certificate creation, password aut
 
 References used, and a description of the project can be found at the top of the script. Furthermore, a chart illustrating the process of what it's doing can be found in 'flow.png'
 
+This function requires that the 'cryptography' module be installed, running in python 3.6 or later
+
 ## test.py
 
 Contains the most basic implementation of doubleTLS.py. It describes the inputs and outputs of the function, and how to use the sockets/keys it returns to communicate with the other host
