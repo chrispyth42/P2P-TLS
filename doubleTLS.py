@@ -345,7 +345,7 @@ def connect(args=dict()):
         symmkeyRemote = Fernet(symmkeyRemote)
         print(f"S: Recieved symmetric key from {address[0]}")
 
-        #With all that information, finally initialize the Chat function
+        #With all that information, return the active sockets and keys
         return {
             'localS':remoteSocket,
             'remoteS':c_socket[0],
@@ -497,7 +497,7 @@ def connect(args=dict()):
             w = 260
             h = 190
         root.geometry(f"{w}x{h}+{round((root.winfo_screenwidth()/2)-(w/2))}+{round((root.winfo_screenheight()/2)-(h/2))}")
-        root.title('Crypto-chat startup')
+        root.title('Cert Password')
 
         #Labels
         pL1 = tk.Label(root,text="Password:",width=11)
@@ -547,14 +547,14 @@ def connect(args=dict()):
             w = 350
             h = 150
         startupFrame.geometry(f"{w}x{h}+{round((startupFrame.winfo_screenwidth()/2)-(w/2))}+{round((startupFrame.winfo_screenheight()/2)-(h/2))}")
-        startupFrame.title('Crypto-chat startup')
+        startupFrame.title('Connection startup')
 
         #Break function for the connect button
         returnVar = list()
 
         #This function is called by both the button, and a keyboard event: pressing return while on password (which sends a parameter by default)
         #So it has a dummy parameter with a default value to cover both situations.
-        def chatConnect(e=0):
+        def connectHosts(e=0):
             #Get variables from the window
             server = serveraddr.get().strip()
             port = portinput.get().strip()
@@ -595,10 +595,10 @@ def connect(args=dict()):
         kPasswordField.bind('<Tab>',tab)
 
         #Enter behavior
-        startupFrame.bind('<Return>',chatConnect)
+        startupFrame.bind('<Return>',connectHosts)
 
         #Connect button
-        connectBtn = tk.Button(startupFrame,text="Connect",width=20,command=chatConnect)
+        connectBtn = tk.Button(startupFrame,text="Connect",width=20,command=connectHosts)
         
         #Labels
         serverLabel = tk.Label(startupFrame,text="Remote Address:")
