@@ -1,6 +1,6 @@
 # P2P-TLS
 
-A learning experiment script in which I created a TLS connection between two hosts using self-signed certificates, and used keypair exchanges underneath that to facilitate additional password authentication. I can't really vouch for its security in practice, but it helped me learn how to code a bunch of cool things including self-signed certificate generation, multithreading, and keypair generation
+A learning experiment project in which I created a TLS connection between two hosts using self-signed certificates, and used keypair exchanges underneath that to facilitate additional password authentication. I can't really vouch for its security in practice, but it helped me learn how to code a bunch of cool things including self-signed certificate generation, multithreading, and keypair generation
 
 ## doubleTLS.py
 
